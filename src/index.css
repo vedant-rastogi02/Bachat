@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;700;800&family=Noto+Sans+Devanagari:wght@400;500;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;700;800&family=Noto+Sans+Devanagari:wght@400;500;700;800&display=swap");
 
 :root {
   --bg: #fff4e6;
@@ -15,7 +15,7 @@
   --danger: #b3261e;
   --shadow: 0 18px 40px rgba(138, 85, 31, 0.16);
   --glass-border: 1px solid rgba(255, 255, 255, 0.58);
-  --font-main: 'Noto Sans Devanagari', 'Mukta', 'Segoe UI', sans-serif;
+  --font-main: "Noto Sans Devanagari", "Mukta", "Segoe UI", sans-serif;
 
   font-family: var(--font-main);
   line-height: 1.45;
@@ -32,9 +32,21 @@
 body {
   margin: 0;
   background:
-    radial-gradient(circle at 10% 10%, rgba(240, 122, 43, 0.24) 0, transparent 28%),
-    radial-gradient(circle at 90% 15%, rgba(201, 147, 87, 0.22) 0, transparent 24%),
-    radial-gradient(circle at 90% 85%, rgba(255, 203, 145, 0.22) 0, transparent 30%),
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(240, 122, 43, 0.24) 0,
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(201, 147, 87, 0.22) 0,
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 90% 85%,
+      rgba(255, 203, 145, 0.22) 0,
+      transparent 30%
+    ),
     linear-gradient(180deg, #fff8ef 0%, #fff3e3 100%);
   color: var(--text);
   min-height: 100vh;
@@ -49,6 +61,8 @@ body {
   margin: 0 auto;
   min-height: 100vh;
   padding: 14px 14px 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .top-bar {
@@ -92,6 +106,55 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.site-footer {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr auto;
+  align-items: end;
+  gap: 28px;
+  margin-top: 18px;
+  padding: 24px 22px;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.48);
+  border: var(--glass-border);
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(138, 85, 31, 0.1);
+  backdrop-filter: blur(14px);
+}
+
+.footer-brand-name {
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.footer-tagline {
+  max-width: 300px;
+  font-size: 0.92rem;
+}
+
+.footer-founders {
+  display: grid;
+  gap: 2px;
+  font-size: 0.92rem;
+}
+
+.footer-founders h2 {
+  color: var(--text);
+  font-size: 1rem;
+  margin: 0 0 4px;
+}
+
+.footer-copyright {
+  font-size: 0.8rem;
+  text-align: right;
+  white-space: nowrap;
 }
 
 h1 {
@@ -141,7 +204,11 @@ p {
 }
 
 .accent-panel {
-  background: linear-gradient(135deg, rgba(240, 122, 43, 0.96), rgba(249, 140, 58, 0.88));
+  background: linear-gradient(
+    135deg,
+    rgba(240, 122, 43, 0.96),
+    rgba(249, 140, 58, 0.88)
+  );
   color: #fff;
 }
 
@@ -245,7 +312,10 @@ p {
   gap: 14px;
   align-items: center;
   min-height: 116px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .nav-card:hover {
@@ -258,7 +328,11 @@ p {
   width: 72px;
   height: 72px;
   border-radius: 22px;
-  background: linear-gradient(145deg, rgba(255, 230, 188, 0.92), rgba(255, 214, 160, 0.82));
+  background: linear-gradient(
+    145deg,
+    rgba(255, 230, 188, 0.92),
+    rgba(255, 214, 160, 0.82)
+  );
   display: grid;
   place-items: center;
 }
@@ -373,7 +447,7 @@ select {
   background: rgba(255, 252, 247, 0.96);
 }
 
-input[type='checkbox'] {
+input[type="checkbox"] {
   min-height: auto;
   width: 20px;
   height: 20px;
@@ -493,7 +567,11 @@ input[type='checkbox'] {
   border-radius: 24px;
   display: grid;
   place-items: center;
-  background: linear-gradient(145deg, rgba(255, 231, 183, 0.96), rgba(255, 216, 155, 0.86));
+  background: linear-gradient(
+    145deg,
+    rgba(255, 231, 183, 0.96),
+    rgba(255, 216, 155, 0.86)
+  );
   font-size: 2rem;
 }
 
@@ -604,5 +682,30 @@ input[type='checkbox'] {
 
   .policy-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .site-footer {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .footer-copyright {
+    grid-column: 1 / -1;
+    text-align: left;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 20px 18px;
+  }
+
+  .footer-copyright {
+    grid-column: auto;
   }
 }
